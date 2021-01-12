@@ -13,4 +13,11 @@
  */
 ?>
 
-<h1><span style="color:#01879d">v</span>Office Einstellungen</h1>
+<?php  
+
+function vof_set_data(){
+    global $wpdb;
+    $table_name = $wpdb->prefix . "vof_";
+}
+
+echo '<h1><span style="color:#01879d">v</span>Office Einstellungen</h1>';
