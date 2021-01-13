@@ -167,6 +167,7 @@ class Vof {
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu_vof' );
 		
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_vof_settings' );
 	}
 
 	/**

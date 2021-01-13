@@ -93,4 +93,9 @@ class Vof_Admin {
 		require_once "partials/vof-admin-display.php";
 	}
 
+	public function register_vof_settings()
+	{
+		register_setting( 'vof', 'mainurl' );
+	}
+
 }
