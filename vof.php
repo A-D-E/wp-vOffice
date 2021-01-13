@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://voffice.pro
- * @since             1.0.0
+ * @since             0.0.2
  * @package           Vof
  *
  * @wordpress-plugin
  * Plugin Name:       vOffice Domain Check
  * Plugin URI:        https://voffice.pro
  * Description:       vOffice URL-CHecking
- * Version:           0.0.1
+ * Version:           0.0.2
  * Author:            RA-MICRO Software AG
  * Author URI:        https://voffice.pro
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 0.0.1 and use SemVer - https://semver.org
+ * Start at version 0.0.2 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'VOF_VERSION', '1.0.0' );
+define( 'VOF_VERSION', '0.0.2' );
 
 /**
  * The code that runs during plugin activation.
