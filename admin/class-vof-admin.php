@@ -63,6 +63,8 @@ class Vof_Admin {
 	 */
 	public function enqueue_styles() {
 
+		wp_enqueue_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), $this->version, 'all' );
+
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vof-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -74,7 +76,10 @@ class Vof_Admin {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'js/bootstrap.js', array( 'jquery' ), '5.01', false );
+
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-admin.js', array( 'jquery' ), $this->version, true );
+
 
 	}
 
