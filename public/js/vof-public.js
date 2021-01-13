@@ -31,7 +31,7 @@
 		} finally {
 			console.log(res.data)
 			if(res.data.success && !res.data.exists){
-				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.voffice.pro" target="_self">https://${url}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.ch.voffice.pro" target="_self">https://${url}.ch.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
 			}
 		}
 		spinerOff()
