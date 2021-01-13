@@ -32,6 +32,4 @@ function voficeDomainChecking(){
 	return ob_get_clean();
 }
 ?>
-<script>
-    window.mainVofUrl = "<?php echo get_option( 'mainurl' ); ?>"
-</script>
+

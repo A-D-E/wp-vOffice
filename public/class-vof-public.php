@@ -73,6 +73,12 @@ class Vof_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-public.js', array( 'jquery' ), $this->version, true );
+		
+		$script_params = array(
+			'mainAdminUrl' => get_option( 'mainurl' )
+		);
+
+		wp_localize_script( $this->plugin_name, 'scriptParams', $script_params );
 		wp_enqueue_script( 'axios',"https://unpkg.com/axios/dist/axios.min.js", "", $this->version, false );
 
 	}

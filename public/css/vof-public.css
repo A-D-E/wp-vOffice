@@ -26,6 +26,8 @@
 .vof__form-domain {
     margin-top: 5px;
     font-size: 16px;
+    text-align: center;
+
 }
 .vof__form-domain a{
     color: #01879d;
@@ -47,4 +49,13 @@ span.vof__form-img.active img:hover {
 }
 span.vof__form-img.active img:active {
     transform: scale(.95);
+}
+
+span.error-span {
+    display: inline-block;
+    color: red;
+    padding: 7px 12px;
+    border: solid thin red;
+    border-radius: 2px;
+    margin: .25rem auto;
 }

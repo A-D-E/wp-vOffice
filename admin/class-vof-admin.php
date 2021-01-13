@@ -54,8 +54,6 @@ class Vof_Admin {
 
 	}
 
-	
-
 	/**
 	 * Register the stylesheets for the admin area.
 	 *

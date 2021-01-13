@@ -1,18 +1,15 @@
 (function( $ ) {
 	'use strict';
-
 	const input = document.querySelector('#vof-input')
 	const btn = document.querySelector('#vof-btn')
 	const spiner = document.querySelector('#spiner')
 	const spanDomain = document.querySelector('.vof__form-domain')
-	let url,
-    res,
-    domain = mainVofUrl || "ch"
+	const domain = scriptParams.mainAdminUrl ? scriptParams.mainAdminUrl : 'ch'
+	let url, res
 
+console.log(scriptParams.mainAdminUrl)
 	const handleInputChange = (e) => {
 		url = e.target.value
-		console.log(url)
-
 		if(url.length >= 3) {
 			btn.classList.remove('notactive')
 			btn.classList.add('active')
@@ -27,12 +24,16 @@
 	const handleSubmit = async() => {
 		spinerOn()
 		try{	
-			res = await axios.get(`https://${url.trim()}.${domain}.voffice.pro/api/namespaceExists/${url.trim()}.${domain}`)
+			res = await axios.get(`https://${url.trim()}.${domain}.voffice.pro/api/snamespaceExists/${url.trim()}.${domain}`)
 		} catch(err) {
 			res = err.response
+			spanDomain.innerHTML = `<span class="error-span">Es ist ein Fehler aufgetretten</span>`
 		} finally {
 			if(res.data.success && !res.data.exists){
 				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+			}
+			else {
+				spanDomain.innerHTML = `https://${url}.${domain}.voffice.pro kann leider nicht reggistriert werden. Bitte versuchen Sie mit einem anderen Domain erneut.`
 			}
 		}
 		spinerOff()
