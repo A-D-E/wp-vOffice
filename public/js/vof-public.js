@@ -5,7 +5,9 @@
 	const btn = document.querySelector('#vof-btn')
 	const spiner = document.querySelector('#spiner')
 	const spanDomain = document.querySelector('.vof__form-domain')
-	let url, res, domain
+	let url,
+    res,
+    domain = mainVofUrl || "ch"
 
 	const handleInputChange = (e) => {
 		url = e.target.value
@@ -25,12 +27,12 @@
 	const handleSubmit = async() => {
 		spinerOn()
 		try{	
-			res = await axios.get(`https://${url.trim()}.${mainVofUrl}.voffice.pro/api/namespaceExists/${url.trim()}.${mainVofUrl}`)
+			res = await axios.get(`https://${url.trim()}.${domain}.voffice.pro/api/namespaceExists/${url.trim()}.${domain}`)
 		} catch(err) {
 			res = err.response
 		} finally {
 			if(res.data.success && !res.data.exists){
-				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${mainVofUrl}.voffice.pro" target="_self">https://${url}.${mainVofUrl}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
 			}
 		}
 		spinerOff()
