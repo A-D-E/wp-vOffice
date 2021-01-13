@@ -7,7 +7,7 @@
  * so that it is ready for translation.
  *
  * @link       https://voffice.pro
- * @since      1.0.0
+ * @since      0.0.2
  *
  * @package    Vof
  * @subpackage Vof/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.0.0
+ * @since      0.0.2
  * @package    Vof
  * @subpackage Vof/includes
  * @author     RA-MICRO Software AG <info@ra-micro.de>

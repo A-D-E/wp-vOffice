@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://voffice.pro
- * @since      1.0.0
+ * @since      0.0.2
  *
  * @package    Vof
  * @subpackage Vof/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
+ * @since      0.0.2
  * @package    Vof
  * @subpackage Vof/includes
  * @author     RA-MICRO Software AG <info@ra-micro.de>
