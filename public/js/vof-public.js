@@ -2,21 +2,27 @@
 	'use strict';
 	const input = document.querySelector('#vof-input')
 	const btn = document.querySelector('#vof-btn')
+	const btnText = document.querySelector('#vof-btn-text')
 	const spiner = document.querySelector('#spiner')
 	const spanDomain = document.querySelector('.vof__form-domain')
 	const domain = scriptParams.mainAdminUrl ? scriptParams.mainAdminUrl : 'ch'
 	let url, res
 
-console.log(scriptParams.mainAdminUrl)
+	input ? input.focus() : null
+
 	const handleInputChange = (e) => {
 		url = e.target.value
 		if(url.length >= 3) {
 			btn.classList.remove('notactive')
 			btn.classList.add('active')
+			btnText.classList.remove('notactive')
+      		btnText.classList.add('active')
 			localStorage.setItem('url', url)
 		}else {
 			btn.classList.add('notactive')
 			btn.classList.remove('active')
+			btnText.classList.add('notactive')
+      		btnText.classList.remove('active')
 			localStorage.removeItem('url')
 		}
 	}
@@ -41,6 +47,8 @@ console.log(scriptParams.mainAdminUrl)
 	
 	input.addEventListener('input', handleInputChange)
 	btn.addEventListener('click', handleSubmit)
+	btnText.addEventListener('click', handleSubmit)
+
 	
 	const spinerOn = () => {
 		btn.style.display = 'none'
@@ -51,9 +59,11 @@ console.log(scriptParams.mainAdminUrl)
 		btn.style.display = 'inline-flex'
 		input.value = ''
 		if (btn.classList.contains('active')) {
-      btn.classList.remove('active')
-      btn.classList.add('notactive')
-    }
+			btn.classList.remove('active')
+			btn.classList.add('notactive')
+			btnText.classList.remove('active')
+      		btnText.classList.add('notactive')
+		}
 		input.removeAttribute('disabled')
 		spiner.style.display = 'none'
   	}

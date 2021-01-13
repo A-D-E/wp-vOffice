@@ -5,15 +5,16 @@
 .vof__form-form {
     display: flex;
     align-items: center;
-    padding-top: 5px;
-}
-.vof__form-input {
-    width: 100%;
-    margin-right: .5rem;
+    justify-content: flex-start;
     padding: 5px;
-    background: transparent;
     border: solid thin #01879d;
     border-radius: 2px;
+}
+.vof__form-input {
+    min-width: 10%;
+    background: transparent;
+    border: none;
+    border-bottom: solid thin gray !important;
 }
 .vof__form-input:focus {
     outline: none !important;
@@ -33,6 +34,12 @@
     color: #01879d;
     font-weight: bold;
 }
+span.vof__form-btn--span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
 span.vof__form-img.sending {
     display: none;
 }
@@ -40,6 +47,18 @@ span.vof__form-img.notactive {
     opacity: .4;
     cursor: not-allowed !important;
 }
+span.vof__form-input--text {
+    padding: 0 5px;
+}
+span.vof__form-input--text.notactive {
+    opacity: .4;
+    cursor: not-allowed !important;
+}
+span.vof__form-input--text.active {
+    opacity: 1;
+    cursor: pointer !important;
+}
+
 span.vof__form-img.active {
     opacity: 1;
     cursor: pointer !important;
