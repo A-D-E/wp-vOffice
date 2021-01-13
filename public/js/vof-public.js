@@ -30,7 +30,7 @@ console.log(scriptParams.mainAdminUrl)
 			spanDomain.innerHTML = `<span class="error-span">Es ist ein Fehler aufgetretten</span>`
 		} finally {
 			if(res.data.success && !res.data.exists){
-				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro/?utm_source=wp/" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+				spanDomain.innerHTML = `Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro/?utm_source=wp" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
 			}
 			else {
 				spanDomain.innerHTML = `https://${url}.${domain}.voffice.pro kann leider nicht reggistriert werden. Bitte versuchen Sie mit einem anderen Domain erneut.`
