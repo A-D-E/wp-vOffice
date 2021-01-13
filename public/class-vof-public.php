@@ -73,7 +73,7 @@ class Vof_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-public.js', array( 'jquery' ), $this->version, true );
-		
+
 		$script_params = array(
 			'mainAdminUrl' => get_option( 'mainurl' )
 		);
@@ -82,5 +82,23 @@ class Vof_Public {
 		wp_enqueue_script( 'axios',"https://unpkg.com/axios/dist/axios.min.js", "", $this->version, false );
 
 	}
+
+	public function voficeDomainChecking(){
+	ob_start();
+
+	?>
+    <div class="vof__form">
+        <p class="vof__form-title">Bitte tragen Sie Ihr Wunschdomain ein:</p>
+        <form id="vof-form" class="vof__form-form">
+            <input class="vof__form-input" id="vof-input" />
+            <span class="vof__form-img sending" id="spiner"><img src="<?php echo plugins_url( 'img/logo.gif', __FILE__ ); ?>" alt="Checking"></span>
+            <span id="vof-btn" class="vof__form-img notactive"><img src="<?php echo plugins_url( 'img/logo.svg', __FILE__ ); ?>" alt="Checking"></span>
+        </form>
+        <p class="vof__form-domain"></p>
+    </div>
+    <?php
+
+	return ob_get_clean();
+}
 
 }
