@@ -71,7 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-vof.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since      0.0.2
  */
 function run_vof() {
 

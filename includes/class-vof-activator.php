@@ -27,7 +27,7 @@ class Vof_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.2
 	 */
 	public static function activate() {
 

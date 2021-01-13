@@ -33,7 +33,7 @@ class Vof {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   protected
 	 * @var      Vof_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Vof {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Vof {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -64,7 +64,7 @@ class Vof {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 */
 	public function __construct() {
 		if ( defined( 'VOF_VERSION' ) ) {
@@ -94,7 +94,7 @@ class Vof {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -125,7 +125,7 @@ class Vof {
 		/**
 		* Register shortcode template
 		*
-		* @since    1.0.0
+		* @since      0.0.2
 		*/
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/vof-public-display.php';
@@ -140,7 +140,7 @@ class Vof {
 	 * Uses the Vof_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -155,7 +155,7 @@ class Vof {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -174,7 +174,7 @@ class Vof {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -189,7 +189,7 @@ class Vof {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since      0.0.2
 	 */
 	public function run() {
 		$this->loader->run();
