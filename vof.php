@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       vOffice Domain Check
  * Plugin URI:        https://voffice.pro
- * Description:       vOffice URL-CHecking
+ * Description:       vOffice URL-Checking
  * Version:           0.0.3
  * Author:            RA-MICRO Software AG
  * Author URI:        https://voffice.pro
