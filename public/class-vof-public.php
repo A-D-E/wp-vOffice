@@ -88,7 +88,7 @@ class Vof_Public {
 
 	?>
     <div class="vof__form">
-        <p class="vof__form-title">Bitte tragen Sie Ihr Wunschdomain ein:</p>
+        <p class="vof__form-title"><?php echo __('Please enter your wish domain: ', 'vof');  ?></p>
         <form id="vof-form" class="vof__form-form">
 			<span>https://</span>
 			<input class="vof__form-input" id="vof-input" />
