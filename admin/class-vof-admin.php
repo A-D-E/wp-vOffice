@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://voffice.pro
- * @since      0.0.2
+ * @since      0.0.3
  *
  * @package    Vof
  * @subpackage Vof/admin
@@ -25,7 +25,7 @@ class Vof_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Vof_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Vof_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Vof_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 */
 	public function enqueue_styles() {
 
@@ -70,14 +70,16 @@ class Vof_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 */
 	public function enqueue_scripts() {
+		$lang_dir = ABSPATH . 'wp-content/plugins/wp-vOffice/languages/';
 
 		wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'js/bootstrap.js', array( 'jquery' ), '5.01', false );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-admin.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-admin.js', array( 'jquery', 'wp-i18n' ), $this->version, true );
 
+		wp_set_script_translations($this->plugin_name, 'vof', $lang_dir);
 
 	}
 

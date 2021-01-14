@@ -34,6 +34,11 @@
     color: #01879d;
     font-weight: bold;
 }
+span.vof-form__inputwrap {
+    display: flex;
+    align-items: center;
+    max-width: 98%;
+}
 span.vof__form-btn--span {
     display: flex;
     align-items: center;
@@ -78,3 +83,16 @@ span.error-span {
     border-radius: 2px;
     margin: .25rem auto;
 }
+@media only screen and (min-width: 981px) and (max-width: 1399px) { 
+    .vof__form-form {
+        flex-direction: column;
+    }
+    span.vof-form__inputwrap {
+        margin-bottom: 1rem;
+    }
+} 
+@media only screen and (min-width: 981px) and (max-width: 2000px) { 
+    .vof__form-form {
+        font-size: .9rem;
+    }
+} 

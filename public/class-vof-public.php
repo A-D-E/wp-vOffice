@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://voffice.pro
- * @since      0.0.2
+ * @since      0.0.3
  *
  * @package    Vof
  * @subpackage Vof/public
@@ -25,7 +25,7 @@ class Vof_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Vof_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Vof_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Vof_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 */
 	public function enqueue_styles() {
 
@@ -68,33 +68,36 @@ class Vof_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since      0.0.2
+	 * @since      0.0.3
 	 */
 	public function enqueue_scripts() {
+		$lang_dir = ABSPATH . 'wp-content/plugins/wp-vOffice/languages/';
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-public.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-public.js', array( 'jquery', 'wp-i18n' ), $this->version, true );
 
 		$script_params = array(
 			'mainAdminUrl' => get_option( 'mainurl' )
 		);
 
 		wp_localize_script( $this->plugin_name, 'scriptParams', $script_params );
+		wp_set_script_translations($this->plugin_name, 'vof', $lang_dir);
+
 		wp_enqueue_script( 'axios',"https://unpkg.com/axios/dist/axios.min.js", "", $this->version, false );
-
 	}
-
 	public function voficeDomainChecking(){
 	ob_start();
 
 	?>
     <div class="vof__form">
-        <p class="vof__form-title">Bitte tragen Sie Ihr Wunschdomain ein:</p>
+        <p class="vof__form-title"><?php echo __('Please enter your wish domain: ', 'vof');  ?></p>
         <form id="vof-form" class="vof__form-form">
-			<span>https://</span>
-			<input class="vof__form-input" id="vof-input" />
-			<span class="vof__form-input--text" id="">.<?php echo get_option( 'mainurl' ); ?>.voffice.pro</span>
+			<span class="vof-form__inputwrap">
+				<span>https://</span>
+				<input class="vof__form-input" id="vof-input" />
+				<span class="vof__form-input--text" id="">.<?php echo get_option( 'mainurl' ); ?>.voffice.pro</span>
+			</span>
 			<span class="vof__form-btn--span">
-				<span class="vof__form-input--text notactive" id="vof-btn-text">Prüfen</span>
+				<span class="vof__form-input--text notactive" id="vof-btn-text"><?php  echo __('Check it', 'vof'); ?></span>
 				<span class="vof__form-img sending" id="spiner"><img src="<?php echo plugins_url( 'img/logo.gif', __FILE__ ); ?>" alt="Checking"></span>
 				<span id="vof-btn" class="vof__form-img notactive"><img src="<?php echo plugins_url( 'img/logo.svg', __FILE__ ); ?>" alt="Checking"></span>
 			</span>
