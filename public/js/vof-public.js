@@ -33,7 +33,7 @@
     spinerOn()
     try {
       res = await axios.get(
-        `https://${url.trim()}.${domain}.voffice.pro/api/namespaceExists/${url.trim()}.${domain}`
+        `https://${url.trim()}.${domain}.voffice.pro/api/namespaceExists}`
       )
     } catch (err) {
       res = err.response
