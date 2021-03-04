@@ -23,10 +23,11 @@ do_settings_sections( 'vof' );
 ?>
   <div class="col-md-4">
     <?php  $selected_option = get_option( 'mainurl' ); ?>
+    <p><?php  echo __('Please select your partner-namespace', 'vof'); ?></p>
     <select name="mainurl" class="form-select form-select-lg" aria-label="Default select example">
         <option selected><?php  echo __('Please select your option: ', 'vof'); ?></option>
-        <option value="ch" <?php  if($selected_option === 'ch'){ echo "selected";}; ?>>CH</option>
-        <option value="es" <?php  if($selected_option === 'es'){ echo "selected";}; ?>>ES</option>
+        <option value="" <?php  if($selected_option === ''){ echo "selected";}; ?>><?php  echo __('Standard', 'vof'); ?></option>
+        <option value="ra-micro" <?php  if($selected_option === 'ra-micro'){ echo "selected";}; ?>><?php  echo __('RA-MICRO', 'vof'); ?></option>
     </select>
   </div>
   <div class="col-12">

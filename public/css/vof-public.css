@@ -83,14 +83,7 @@ span.error-span {
     border-radius: 2px;
     margin: .25rem auto;
 }
-@media only screen and (min-width: 981px) and (max-width: 1399px) { 
-    .vof__form-form {
-        flex-direction: column;
-    }
-    span.vof-form__inputwrap {
-        margin-bottom: 1rem;
-    }
-} 
+
 @media only screen and (min-width: 981px) { 
     .vof__form-form {
         font-size: .9rem;

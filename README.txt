@@ -48,7 +48,7 @@ https://www.voffice.pro
 
 == Changelog ==
 
-= 0.0.3 = 
+= 0.0.4 = 
 Add translation DE, EN
 Add javascript translation
 Fix some errors
