@@ -48,7 +48,7 @@
             '<span style="color:#01879d">v</span>'
 		  ) 
 		  +
-		  `<a href="https://${url}.${domain}.voffice.pro/?utm_source=wp" target="_self">https://${url}.${domain}.voffice.pro</a>`
+		  `<a href="https://${url}.${domain}.voffice.pro/" target="_self">https://${url}.${domain}.voffice.pro</a>`
 		  +
           __(' is free and can be set up right away', 'vof')
       } else {
@@ -64,7 +64,7 @@
     spinerOff()
   }
 
-  ;`Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro/?utm_source=wp" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+  ;`Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
 
   input.addEventListener('input', handleInputChange)
   btn.addEventListener('click', handleSubmit)
