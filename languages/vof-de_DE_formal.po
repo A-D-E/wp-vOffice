@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vOffice Domain Check\n"
-"POT-Creation-Date: 2021-01-14 13:20+0100\n"
-"PO-Revision-Date: 2021-01-14 13:21+0100\n"
+"POT-Creation-Date: 2021-03-04 19:54+0100\n"
+"PO-Revision-Date: 2021-03-04 19:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE@formal\n"
@@ -33,19 +33,31 @@ msgstr "Toast"
 msgid "settings"
 msgstr "Einstellungen"
 
-#: admin/partials/vof-admin-display.php:27
+#: admin/partials/vof-admin-display.php:26
+msgid "Please select your partner-namespace"
+msgstr "Bitte wählen Sie Ihr Namespace"
+
+#: admin/partials/vof-admin-display.php:28
 msgid "Please select your option: "
 msgstr "Bitte wählen Sie Ihre Option: "
 
-#: admin/partials/vof-admin-display.php:33
+#: admin/partials/vof-admin-display.php:29
+msgid "Standard"
+msgstr "Standart (leer)"
+
+#: admin/partials/vof-admin-display.php:30
+msgid "RA-MICRO"
+msgstr "RA-MICRO"
+
+#: admin/partials/vof-admin-display.php:34
 msgid "Save"
 msgstr "Speichern"
 
-#: public/class-vof-public.php:93
+#: public/class-vof-public.php:92
 msgid "Please enter your wish domain: "
 msgstr "Bitte geben Sie Ihr Wunsch-Domain ein: "
 
-#: public/class-vof-public.php:101
+#: public/class-vof-public.php:100
 msgid "Check it"
 msgstr "Prüfen"
 
@@ -80,7 +92,9 @@ msgid "https://voffice.pro"
 msgstr "https://voffice.pro"
 
 #. Description of the plugin/theme
-msgid "vOffice URL-CHecking"
+#, fuzzy
+#| msgid "vOffice URL-CHecking"
+msgid "vOffice URL-Checking"
 msgstr "vOffice URL-Prüfung"
 
 #. Author of the plugin/theme
