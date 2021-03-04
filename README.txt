@@ -47,8 +47,11 @@ https://www.voffice.pro
 2. Backend
 
 == Changelog ==
+= 0.0.4 =
+Remove es name-space
+Add ra-micro name-space
 
-= 0.0.4 = 
+= 0.0.3 = 
 Add translation DE, EN
 Add javascript translation
 Fix some errors
