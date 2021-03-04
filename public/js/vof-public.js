@@ -5,9 +5,8 @@
   const input = document.querySelector('#vof-input')
   const btn = document.querySelector('#vof-btn')
   const btnText = document.querySelector('#vof-btn-text')
-  const spiner = document.querySelector('#spiner')
   const spanDomain = document.querySelector('.vof__form-domain')
-  const domain = scriptParams.mainAdminUrl ? scriptParams.mainAdminUrl : 'ch'
+  const domain = scriptParams.mainAdminUrl ? scriptParams.mainAdminUrl : ''
   let url, res
 
   input ? input.focus() : null
@@ -33,7 +32,7 @@
     spinerOn()
     try {
       res = await axios.get(
-        `https://${url.trim()}.${domain}.voffice.pro/api/namespaceExists`
+        `https://${url.trim()}${domain}.voffice.pro/api/namespaceExists`
       )
     } catch (err) {
       res = err.response
@@ -48,7 +47,7 @@
             '<span style="color:#01879d">v</span>'
 		  ) 
 		  +
-		  `<a href="https://${url}.${domain}.voffice.pro/" target="_self">https://${url}.${domain}.voffice.pro</a>`
+		  `<a href="https://${url}${domain}.voffice.pro/" target="_self">https://${url}${domain}.voffice.pro</a>`
 		  +
           __(' is free and can be set up right away', 'vof')
       } else {
@@ -57,26 +56,23 @@
             '%s unfortunately cannot be registered. Please try again with another domain.',
             'vof'
           ),
-          `https://${url}.${domain}.voffice.pro`
+          `https://${url}${domain}.voffice.pro`
         )
       }
     }
     spinerOff()
   }
 
-  ;`Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}.${domain}.voffice.pro" target="_self">https://${url}.${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
+  ;`Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}${domain}.voffice.pro" target="_self">https://${url}${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
 
   input.addEventListener('input', handleInputChange)
   btn.addEventListener('click', handleSubmit)
   btnText.addEventListener('click', handleSubmit)
 
   const spinerOn = () => {
-    btn.style.display = 'none'
-    spiner.style.display = 'inline-flex'
     input.setAttribute('disabled', true)
   }
   const spinerOff = () => {
-    btn.style.display = 'inline-flex'
     input.value = ''
     if (btn.classList.contains('active')) {
       btn.classList.remove('active')
@@ -85,6 +81,5 @@
       btnText.classList.add('notactive')
     }
     input.removeAttribute('disabled')
-    spiner.style.display = 'none'
   }
 })( jQuery );

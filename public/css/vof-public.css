@@ -6,29 +6,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 5px;
-    border: solid thin #01879d;
-    border-radius: 2px;
 }
 .vof__form-input {
     min-width: 10%;
     background: transparent;
     border: none;
-    border-bottom: solid thin gray !important;
 }
 .vof__form-input:focus {
     outline: none !important;
 }
-.vof__form-img img{
-    display: inline-flex;
-    width: 35px;
-    transition: all .3s;
-}
+
 .vof__form-domain {
     margin-top: 5px;
-    font-size: 16px;
-    text-align: center;
-
+    transition: all .3;
 }
 .vof__form-domain a{
     color: #01879d;
@@ -38,41 +28,46 @@ span.vof-form__inputwrap {
     display: flex;
     align-items: center;
     max-width: 98%;
+    border-bottom: solid thin #01879d;
 }
 span.vof__form-btn--span {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 1;
+    border: solid thin #01879d;
+    font-style: italic;
+    border-radius: 3px;
+    margin-left: 1rem;
+    padding: 3px 5px;
+    transition: all .3s;
+    background: #01879d;
+    cursor:pointer;
 }
-span.vof__form-img.sending {
-    display: none;
+span.vof__form-btn--span.notactive {
+    border: solid thin rgb(128 128 128 / 35%);
+    background:transparent;
+    cursor: not-allowed;
 }
-span.vof__form-img.notactive {
-    opacity: .4;
-    cursor: not-allowed !important;
+span.vof__form-btn--span.notactive:hover span.vof__form-btn--text{
+    color: gray;
 }
-span.vof__form-input--text {
-    padding: 0 5px;
-}
-span.vof__form-input--text.notactive {
-    opacity: .4;
-    cursor: not-allowed !important;
-}
-span.vof__form-input--text.active {
-    opacity: 1;
-    cursor: pointer !important;
+span.vof__form-btn--span:hover {
+    background: transparent;
 }
 
-span.vof__form-img.active {
+span.vof__form-btn--text {
+    padding: 0 5px;
+    color:#fff;
+}
+span.vof__form-btn--span:hover span.vof__form-btn--text{
+    color: #01879d;
+}
+span.vof__form-btn--text.notactive {
+    opacity: .4;
+    cursor: not-allowed !important;
+    color: gray;
+
+}
+span.vof__form-btn--text.active {
     opacity: 1;
     cursor: pointer !important;
-}
-span.vof__form-img.active img:hover {
-    transform: scale(1.05);
-}
-span.vof__form-img.active img:active {
-    transform: scale(.95);
 }
 
 span.error-span {
@@ -83,9 +78,3 @@ span.error-span {
     border-radius: 2px;
     margin: .25rem auto;
 }
-
-@media only screen and (min-width: 981px) { 
-    .vof__form-form {
-        font-size: .9rem;
-    }
-} 

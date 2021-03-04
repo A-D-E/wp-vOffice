@@ -27,7 +27,7 @@ do_settings_sections( 'vof' );
     <select name="mainurl" class="form-select form-select-lg" aria-label="Default select example">
         <option selected><?php  echo __('Please select your option: ', 'vof'); ?></option>
         <option value="" <?php  if($selected_option === ''){ echo "selected";}; ?>><?php  echo __('Standard', 'vof'); ?></option>
-        <option value="ra-micro" <?php  if($selected_option === 'ra-micro'){ echo "selected";}; ?>><?php  echo __('RA-MICRO', 'vof'); ?></option>
+        <option value=".ra-micro" <?php  if($selected_option === '.ra-micro'){ echo "selected";}; ?>><?php  echo __('RA-MICRO', 'vof'); ?></option>
     </select>
   </div>
   <div class="col-12">

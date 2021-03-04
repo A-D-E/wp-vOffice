@@ -94,12 +94,10 @@ class Vof_Public {
 			<span class="vof-form__inputwrap">
 				<span>https://</span>
 				<input class="vof__form-input" id="vof-input" />
-				<span class="vof__form-input--text" id="">.<?php echo get_option( 'mainurl' ); ?>.voffice.pro</span>
+				<span class="vof__form-input--text" id=""><?php echo get_option( 'mainurl' ); ?>.voffice.pro</span>
 			</span>
-			<span class="vof__form-btn--span">
-				<span class="vof__form-input--text notactive" id="vof-btn-text"><?php  echo __('Check it', 'vof'); ?></span>
-				<span class="vof__form-img sending" id="spiner"><img src="<?php echo plugins_url( 'img/logo.gif', __FILE__ ); ?>" alt="Checking"></span>
-				<span id="vof-btn" class="vof__form-img notactive"><img src="<?php echo plugins_url( 'img/logo.svg', __FILE__ ); ?>" alt="Checking"></span>
+			<span class="vof__form-btn--span notactive" id="vof-btn">
+				<span class="vof__form-btn--text notactive" id="vof-btn-text"><?php  echo __('Check it', 'vof'); ?></span>
 			</span>
         </form>
         <p class="vof__form-domain"></p>
