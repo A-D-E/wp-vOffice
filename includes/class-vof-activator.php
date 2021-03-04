@@ -4,7 +4,7 @@
  * Fired during plugin activation
  *
  * @link       https://voffice.pro
- * @since      0.0.4
+ * @since      0.0.5
  *
  * @package    Vof
  * @subpackage Vof/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      0.0.4
+ * @since      0.0.5
  * @package    Vof
  * @subpackage Vof/includes
  * @author     RA-MICRO Software AG <info@ra-micro.de>
@@ -27,7 +27,7 @@ class Vof_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    0.0.4
+	 * @since    0.0.5
 	 */
 	public static function activate() {
 

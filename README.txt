@@ -47,6 +47,13 @@ https://www.voffice.pro
 2. Backend
 
 == Changelog ==
+
+= 0.0.5 =
+Fix styles
+Remove images from code
+Remove logo.gif
+Fix url
+
 = 0.0.4 =
 Remove es name-space
 Add ra-micro name-space
