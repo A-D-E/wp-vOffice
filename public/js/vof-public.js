@@ -1,5 +1,5 @@
 (function( $ ) {
-  ;('use strict')
+  ('use strict')
   const { __, sprintf } = wp.i18n
   // sprintf(__('', 'vof'), )
   const input = document.querySelector('#vof-input')
@@ -12,6 +12,10 @@
   input ? input.focus() : null
 
   const handleInputChange = (e) => {
+    if (e.keyCode == 13) {
+      e.preventDefault()
+      return false
+    }
     url = e.target.value
     if (url.length >= 3) {
       btn.classList.remove('notactive')
@@ -63,8 +67,6 @@
     spinerOff()
   }
 
-  ;`Ihre <span style="color:#01879d">v</span>Office Wunschdomain: <a href="https://${url}${domain}.voffice.pro" target="_self">https://${url}${domain}.voffice.pro</a> ist frei und kann sofort eingerichtet werden`
-
   input.addEventListener('input', handleInputChange)
   btn.addEventListener('click', handleSubmit)
   btnText.addEventListener('click', handleSubmit)
@@ -82,4 +84,4 @@
     }
     input.removeAttribute('disabled')
   }
-})( jQuery );
+})( jQuery )
