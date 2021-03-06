@@ -67,9 +67,9 @@
     spinerOff()
   }
 
-  input.addEventListener('input', handleInputChange)
-  btn.addEventListener('click', handleSubmit)
-  btnText.addEventListener('click', handleSubmit)
+  input?.addEventListener('input', handleInputChange)
+  btn?.addEventListener('click', handleSubmit)
+  btnText?.addEventListener('click', handleSubmit)
 
   const spinerOn = () => {
     input.setAttribute('disabled', true)
