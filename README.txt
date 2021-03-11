@@ -48,6 +48,11 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 0.0.6 =
+
+Fix translation bug
+Fix console errors
+
 = 0.0.5 =
 Fix styles
 Remove images from code

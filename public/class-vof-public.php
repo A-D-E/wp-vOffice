@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://voffice.pro
- * @since      0.0.5
+ * @since      0.0.6
  *
  * @package    Vof
  * @subpackage Vof/public
@@ -25,7 +25,7 @@ class Vof_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since      0.0.5
+	 * @since      0.0.6
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Vof_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since      0.0.5
+	 * @since      0.0.6
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Vof_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since      0.0.5
+	 * @since      0.0.6
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Vof_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since      0.0.5
+	 * @since      0.0.6
 	 */
 	public function enqueue_styles() {
 
@@ -68,7 +68,7 @@ class Vof_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since      0.0.5
+	 * @since      0.0.6
 	 */
 	public function enqueue_scripts() {
 		$lang_dir = ABSPATH . 'wp-content/plugins/vof/languages/';
