@@ -1,5 +1,5 @@
 (function( $ ) {
-  ('use strict')
+  
   const { __, sprintf } = wp.i18n
   // sprintf(__('', 'vof'), )
   const input = document.querySelector('#vof-input')
@@ -35,16 +35,16 @@
   const handleSubmit = async () => {
     spinerOn()
     try {
-      res = await axios.get(
+      res = await fetch(
         `https://${url.trim()}${domain}.voffice.pro/api/namespaceExists`
-      )
+      ).then(data => data.json())
     } catch (err) {
       res = err.response
       spanDomain.innerHTML =
         '<span class="error-span">' + __('An error occurred', 'vof') + '</span>'
       spinerOff()
     } finally {
-      if (res.data.success && !res.data.exists) {
+      if (res.success && !res.exists) {
         spanDomain.innerHTML =
           sprintf(
             __('Your %sOffice domain of choice: ', 'vof'),

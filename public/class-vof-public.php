@@ -71,7 +71,7 @@ class Vof_Public {
 	 * @since      0.0.5
 	 */
 	public function enqueue_scripts() {
-		$lang_dir = ABSPATH . 'wp-content/plugins/wp-vOffice/languages/';
+		$lang_dir = ABSPATH . 'wp-content/plugins/vof/languages/';
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-public.js', array( 'jquery', 'wp-i18n' ), $this->version, true );
 
@@ -82,7 +82,7 @@ class Vof_Public {
 		wp_localize_script( $this->plugin_name, 'scriptParams', $script_params );
 		wp_set_script_translations($this->plugin_name, 'vof', $lang_dir);
 
-		wp_enqueue_script( 'axios',"https://unpkg.com/axios/dist/axios.min.js", "", $this->version, false );
+		// wp_enqueue_script( 'axios',"https://unpkg.com/axios/dist/axios.min.js", "", $this->version, false );
 	}
 	public function voficeDomainChecking(){
 	ob_start();
