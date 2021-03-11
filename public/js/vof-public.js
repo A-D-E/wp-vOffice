@@ -49,10 +49,8 @@
           sprintf(
             __('Your %sOffice domain of choice: ', 'vof'),
             '<span style="color:#01879d">v</span>'
-		  ) 
-		  +
-		  `<a href="https://${url}${domain}.voffice.pro/" target="_self">https://${url}${domain}.voffice.pro</a>`
-		  +
+          ) +
+          `<a href="https://${url}${domain}.voffice.pro/" target="_self">https://${url}${domain}.voffice.pro</a>` +
           __(' is free and can be set up right away', 'vof')
       } else {
         spanDomain.innerHTML = sprintf(

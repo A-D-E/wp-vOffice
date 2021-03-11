@@ -61,20 +61,20 @@ msgstr "Bitte geben Sie Ihr Wunsch-Domain ein: "
 msgid "Check it"
 msgstr "Prüfen"
 
-#: public/js/vof-public.js:40
+#: public/js/vof-public.js:44
 msgid "An error occurred"
 msgstr "Es ist ein Fehler aufgetretten"
 
-#: public/js/vof-public.js:46
+#: public/js/vof-public.js:50
 #, javascript-format
 msgid "Your %sOffice domain of choice: "
 msgstr "Ihre %sOffice Wunschdomain: "
 
-#: public/js/vof-public.js:52
+#: public/js/vof-public.js:54
 msgid " is free and can be set up right away"
 msgstr " ist frei und kann sofort eingerichtet werden"
 
-#: public/js/vof-public.js:56
+#: public/js/vof-public.js:58
 #, javascript-format
 msgid ""
 "%s unfortunately cannot be registered. Please try again with another domain."

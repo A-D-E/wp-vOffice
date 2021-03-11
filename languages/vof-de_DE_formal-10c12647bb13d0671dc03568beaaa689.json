@@ -7,7 +7,7 @@
         "messages": {
             "": {
                 "domain": "vof",
-                "lang": "de_DE@formal",
+                "lang": "de_DE_formal",
                 "plural-forms": "nplurals=2; plural=(n != 1);"
             },
             "modal": [
