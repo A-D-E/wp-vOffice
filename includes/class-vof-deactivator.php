@@ -4,7 +4,7 @@
  * Fired during plugin deactivation
  *
  * @link       https://voffice.pro
- * @since      0.0.6
+ * @since      0.0.7
  *
  * @package    Vof
  * @subpackage Vof/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      0.0.6
+ * @since      0.0.7
  * @package    Vof
  * @subpackage Vof/includes
  * @author     RA-MICRO Software AG <info@ra-micro.de>
@@ -27,7 +27,7 @@ class Vof_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since      0.0.6
+	 * @since      0.0.7
 	 */
 	public static function deactivate() {
 

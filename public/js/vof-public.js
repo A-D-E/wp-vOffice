@@ -44,15 +44,7 @@
         '<span class="error-span">' + __('An error occurred', 'vof') + '</span>'
       spinerOff()
     } finally {
-      if (res.success && !res.exists) {
-        spanDomain.innerHTML =
-          sprintf(
-            __('Your %sOffice domain of choice: ', 'vof'),
-            '<span style="color:#01879d">v</span>'
-          ) +
-          `<a href="https://${url}${domain}.voffice.pro/" target="_self">https://${url}${domain}.voffice.pro</a>` +
-          __(' is free and can be set up right away', 'vof')
-      } else {
+      if (res['setupDone'] || res['creatorInfo'] || res['noNewUsers']) {
         spanDomain.innerHTML = sprintf(
           __(
             '%s unfortunately cannot be registered. Please try again with another domain.',
@@ -60,6 +52,15 @@
           ),
           `https://${url}${domain}.voffice.pro`
         )
+      } else {
+        spanDomain.innerHTML =
+          sprintf(
+            __('Your %sOffice domain of choice: ', 'vof'),
+            '<span style="color:#01879d">v</span>'
+          ) +
+          `<a href="https://${url}${domain}.voffice.pro/" target="_self">https://${url}${domain}.voffice.pro</a>` +
+          __(' is free and can be set up right away', 'vof')
+        
       }
     }
     spinerOff()

@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://voffice.pro
- * @since      0.0.6
+ * @since      0.0.7
  *
  * @package    Vof
  * @subpackage Vof/admin/partials
