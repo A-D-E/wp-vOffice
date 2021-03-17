@@ -48,6 +48,9 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 0.0.7.1 =
+Remove bootstrap.js
+
 = 0.0.7 =
 Add new API rules
 Add check if bootstrap already loaded in backend
