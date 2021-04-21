@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vOffice Domain Check\n"
-"POT-Creation-Date: 2021-03-05 12:50+0100\n"
-"PO-Revision-Date: 2021-03-05 13:47+0100\n"
+"POT-Creation-Date: 2021-04-21 11:32+0200\n"
+"PO-Revision-Date: 2021-04-21 11:32+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -67,20 +67,20 @@ msgstr "Es ist ein Fehler aufgetretten"
 
 #: public/js/vof-public.js:50
 #, javascript-format
-msgid "Your %sOffice domain of choice: "
-msgstr "Ihre %sOffice Wunschdomain: "
-
-#: public/js/vof-public.js:54
-msgid " is free and can be set up right away"
-msgstr " ist frei und kann sofort eingerichtet werden"
-
-#: public/js/vof-public.js:58
-#, javascript-format
 msgid ""
 "%s unfortunately cannot be registered. Please try again with another domain."
 msgstr ""
 "%s kann leider nicht registriert werden. Bitte versuchen Sie mit einer "
 "anderen Domain erneut."
+
+#: public/js/vof-public.js:58
+#, javascript-format
+msgid "Your %sOffice domain of choice: "
+msgstr "Ihre %sOffice Wunschdomain: "
+
+#: public/js/vof-public.js:62
+msgid " is free and can be set up right away"
+msgstr " ist frei und kann sofort eingerichtet werden"
 
 #. Plugin Name of the plugin/theme
 msgid "vOffice Domain Check"
@@ -92,8 +92,6 @@ msgid "https://voffice.pro"
 msgstr "https://voffice.pro"
 
 #. Description of the plugin/theme
-#, fuzzy
-#| msgid "vOffice URL-CHecking"
 msgid "vOffice URL-Checking"
 msgstr "vOffice URL-Prüfung"
 
