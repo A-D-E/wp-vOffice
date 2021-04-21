@@ -3,7 +3,7 @@
 /**
  *
  * @link       https://voffice.pro
- * @since      0.0.7.1
+ * @since      1.0.0
  *
  * @package    Vof
  * @subpackage Vof/public/partials

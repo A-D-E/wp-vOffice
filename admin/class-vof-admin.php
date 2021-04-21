@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://voffice.pro
- * @since      0.0.7.1
+ * @since      1.0.0
  *
  * @package    Vof
  * @subpackage Vof/admin
@@ -25,7 +25,7 @@ class Vof_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since      0.0.7.1
+	 * @since      1.0.0
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Vof_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since      0.0.7.1
+	 * @since      1.0.0
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Vof_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since      0.0.7.1
+	 * @since      1.0.0
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Vof_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since      0.0.7.1
+	 * @since      1.0.0
 	 */
 	public function enqueue_styles() {
 
@@ -72,7 +72,7 @@ class Vof_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since      0.0.7.1
+	 * @since      1.0.0
 	 */
 	public function enqueue_scripts() {
 		$lang_dir = ABSPATH . 'wp-content/plugins/vof/languages/';
@@ -95,7 +95,22 @@ class Vof_Admin {
 
 	public function register_vof_settings()
 	{
-		register_setting( 'vof', 'mainurl' );
+		register_setting( 'vof', 'mainurl');
+		register_setting( 'vof', 'partner-id');
+		register_setting( 'vof', 'is-ra-micro');
+		register_setting( 'vof', 'slot-label-de');
+		register_setting( 'vof', 'slot-label-en');
+		register_setting( 'vof', 'slot-feedback-de');
+		register_setting( 'vof', 'slot-feedback-en');
+		register_setting( 'vof', 'slot-button-de');
+		register_setting( 'vof', 'slot-button-en');
+		register_setting( 'vof', 'slot-setup-button-de');
+		register_setting( 'vof', 'slot-setup-button-en');
+		register_setting( 'vof', 'slot-chip-error-de');
+		register_setting( 'vof', 'slot-chip-error-en');
+		register_setting( 'vof', 'slot-chip-success-de');
+		register_setting( 'vof', 'slot-chip-success-en');
+
 	}
 
 }
