@@ -75,7 +75,7 @@ class Vof_Admin {
 	 * @since      0.0.7.1
 	 */
 	public function enqueue_scripts() {
-		$lang_dir = ABSPATH . 'wp-content/plugins/wp-vOffice/languages/';
+		$lang_dir = ABSPATH . 'wp-content/plugins/vof/languages/';
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vof-admin.js', array( 'jquery', 'wp-i18n' ), $this->version, true );
 
