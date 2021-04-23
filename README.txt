@@ -48,6 +48,9 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 1.0.1 =
+Change Styling to column direction
+
 = 1.0.0 =
 Rebuild to web-components
 

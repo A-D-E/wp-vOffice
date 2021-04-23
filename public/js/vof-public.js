@@ -8,16 +8,19 @@
 
 .vof-checker__form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   font-family: Gudea,Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin: 1rem 0;
 }
 
 .vof-checker__inputwrap {
     position: relative;
-    flex-basis: 30%;
-    margin-right: 2rem;
 }
 
+.vof-checker_buttonswrap {
+  display: flex;
+  margin-top: 1rem;
+}
 .vof-checker__button, .vof-checker__setup-button {
   display: flex;
   align-items: center;
@@ -70,7 +73,6 @@
   letter-spacing: inherit;
   animation-duration: 10ms;
   border-bottom: solid thin rgb(1, 135, 157);
-  margin: 0 1rem;
   -webkit-tap-highlight-color: transparent;
 }
 .vof-checker__input:active, .vof-checker__input:focus {
@@ -140,6 +142,10 @@
     display: none
   }
 
+  .vof-checker__feedback {
+    margin-bottom: 1rem;
+  }
+
   @keyframes awesome-spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -153,8 +159,10 @@
             <span id="vof-checker__chip-error" class="vof-checker__chip-error hide"><span class="vof-checker__chip-error-icon">&#10006;</span><slot name="chip-error"></slot></span>
             <span id="vof-checker__chip-success" class="vof-checker__chip-success hide"><span class="vof-checker__chip-success-icon">&#10004;</span><slot name="chip-success"></slot></span>
             </div>
+            <div class="vof-checker_buttonswrap">
             <button id="vof-checker__button" class="vof-checker__button disabled"><slot name="button"></slot> <span class="loader awesome-spin"></span></button>
             <button id="vof-checker__setup-button" class="vof-checker__setup-button disabled"><slot name="setup-button"></slot></button>
+            </div>
         </form>
         <div id="vof-checker__feedback" class="vof-checker__feedback"><slot name="feedback"></slot></div>
     </div>
