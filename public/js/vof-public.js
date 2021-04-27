@@ -247,7 +247,10 @@
 
         value = e.target.value.toLowerCase()
 
-        if (this.vormatedValue(value.trim()).length < 3) {
+        if (
+          this.vormatedValue(value.trim()).length < 3 ||
+          this.vormatedValue(value.trim()).length > 30
+        ) {
           this.btn.classList.add('disabled')
         } else this.btn.classList.remove('disabled')
       })
