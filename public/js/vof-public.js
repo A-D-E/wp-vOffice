@@ -185,11 +185,12 @@
 
     vormatedValue(val) {
       return val
-        .replace('ä', 'ae')
-        .replace('ö', 'oe')
-        .replace('ü', 'ue')
-        .replace('ß', 'ss')
-        .replace(/[^0-9a-zA-Z_-]/g, '')
+        .replaceAll('ä', 'ae')
+        .replaceAll('ö', 'oe')
+        .replaceAll('ü', 'ue')
+        .replaceAll('ß', 'ss')
+        .replaceAll(/-{2,}/g, '-')
+        .replaceAll(/[^0-9a-zA-Z-]/g, '')
     }
 
     async checkDomain(value) {
