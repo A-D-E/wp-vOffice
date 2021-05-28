@@ -48,6 +48,11 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 1.0.3 =
+Fix max. german special characters
+Add placeholder
+Add placeholder settings in backend
+
 = 1.0.2 =
 Fix max. characters
 

@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://voffice.pro
- * @since      1.0.2
+ * @since      1.0.3
  *
  * @package    Vof
  * @subpackage Vof/admin/partials
@@ -38,6 +38,8 @@ do_settings_sections( 'vof' );
       $slot_chip_error_en = get_option( 'slot-chip-error-en' );
       $slot_chip_success_de = get_option( 'slot-chip-success-de' );
       $slot_chip_success_en = get_option( 'slot-chip-success-en' );
+      $slot_placeholder_de = get_option( 'slot-placeholder-de' );
+      $slot_placeholder_en = get_option( 'slot-placeholder-en' );
     ?>
     <p><?php  echo __('Please select your partner-namespace', 'vof'); ?></p>
     <select name="is-ra-micro" class="form-select form-select-lg" aria-label="Default select example">
@@ -116,6 +118,18 @@ do_settings_sections( 'vof' );
       <div class="input-group">
       <div class="input-group-prepend"><span class="input-group-text" id="slot-chip-success-en">EN</span></div>
       <div class="col-md-3"><input value="<?php echo $slot_chip_success_en; ?>" type="text" class="form-control mb-2" name="slot-chip-success-en" id="slot-chip-success-en" aria-describedby="slot-chip-success-en" /></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="slot-chip-success-de">Placeholder</label>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text" id="slot-placeholder-de">DE</span></div>
+      <div class="col-md-3"><input value="<?php echo $slot_placeholder_de; ?>" type="text" class="form-control mb-2" name="slot-placeholder-de" id="slot-placeholder-de" aria-describedby="slot-placeholder-de" /></div>
+      </div>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text" id="slot-placeholder-en">EN</span></div>
+      <div class="col-md-3"><input value="<?php echo $slot_placeholder_en; ?>" type="text" class="form-control mb-2" name="slot-placeholder-en" id="slot-placeholder-en" aria-describedby="slot-placeholder-en" /></div>
       </div>
     </div>
 

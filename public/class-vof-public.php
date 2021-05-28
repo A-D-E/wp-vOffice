@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://voffice.pro
- * @since      1.0.2
+ * @since      1.0.3
  *
  * @package    Vof
  * @subpackage Vof/public
@@ -25,7 +25,7 @@ class Vof_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since      1.0.2
+	 * @since      1.0.3
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Vof_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since      1.0.2
+	 * @since      1.0.3
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class Vof_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since      1.0.2
+	 * @since      1.0.3
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class Vof_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since      1.0.2
+	 * @since      1.0.3
 	 */
 	public function enqueue_styles() {
 
@@ -68,7 +68,7 @@ class Vof_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since      1.0.2
+	 * @since      1.0.3
 	 */
 	public function enqueue_scripts() {
 		$lang_dir = ABSPATH . 'wp-content/plugins/vof/languages/';
@@ -94,6 +94,7 @@ class Vof_Public {
 		<vof-checker 
 				isRaMicro="<?php echo get_option( 'is-ra-micro' ); ?>"
 				partnerId="<?php echo get_option( 'partner-id' ); ?>"
+				placeholder="<?php echo ( $german ? get_option( 'slot-placeholder-de' ) : get_option( 'slot-placeholder-en' )); ?>"
 				>
 				<span slot="label"><?php echo ( $german ? get_option( 'slot-label-de' ) : get_option( 'slot-label-en' )); ?></span>
 				<span slot="feedback"><?php echo ( $german ? get_option( 'slot-feedback-de' ) : get_option( 'slot-feedback-en' )); ?></span>
@@ -101,6 +102,7 @@ class Vof_Public {
 				<span slot="setup-button"><?php echo ( $german ? get_option( 'slot-setup-button-de' ) : get_option( 'slot-setup-button-en' )); ?></span>
 				<span slot="chip-error"><?php echo ( $german ? get_option( 'slot-chip-error-de' ) :  get_option( 'slot-chip-error-en' )); ?></span>
 				<span slot="chip-success"><?php echo ( $german ? get_option( 'slot-chip-success-de' ) : get_option( 'slot-chip-success-en' )); ?></span>
+				
 			</vof-checker>
 		<?php
 

@@ -172,6 +172,7 @@
       super()
       this.attachShadow({ mode: 'open' })
       this.shadowRoot.appendChild(template.content.cloneNode(true))
+      this.input = this.shadowRoot.querySelector('#vof-checker__input')
       this.loader = this.shadowRoot.querySelector('.loader')
       this.btn = this.shadowRoot.querySelector('#vof-checker__button')
       this.setupBtn = this.shadowRoot.querySelector(
@@ -181,6 +182,8 @@
       this.chipSuccess = this.shadowRoot.querySelector(
         '#vof-checker__chip-success'
       )
+      this.placeholder = this.getAttribute('placeholder')
+      this.input.setAttribute('placeholder', this.placeholder)
     }
 
     vormatedValue(val) {
