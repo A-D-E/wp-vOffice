@@ -48,6 +48,10 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 1.0.4 =
+Input: replace "." with "-"
+Input: not allow numbers on first position
+
 = 1.0.3 =
 Fix max. german special characters
 Add placeholder
