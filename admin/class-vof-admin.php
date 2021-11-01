@@ -102,6 +102,8 @@ class Vof_Admin {
 		register_setting( 'vof', 'slot-label-en');
 		register_setting( 'vof', 'slot-feedback-de');
 		register_setting( 'vof', 'slot-feedback-en');
+		register_setting( 'vof', 'slot-error-de');
+		register_setting( 'vof', 'slot-error-en');
 		register_setting( 'vof', 'slot-button-de');
 		register_setting( 'vof', 'slot-button-en');
 		register_setting( 'vof', 'slot-setup-button-de');

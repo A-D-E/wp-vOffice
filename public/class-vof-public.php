@@ -98,6 +98,7 @@ class Vof_Public {
 				>
 				<span slot="label"><?php echo ( $german ? get_option( 'slot-label-de' ) : get_option( 'slot-label-en' )); ?></span>
 				<span slot="feedback"><?php echo ( $german ? get_option( 'slot-feedback-de' ) : get_option( 'slot-feedback-en' )); ?></span>
+				<span slot="error"><?php echo ( $german ? get_option( 'slot-error-de' ) : get_option( 'slot-error-en' )); ?></span>
 				<span slot="button"><?php echo ( $german ?  get_option( 'slot-button-de' ) : get_option( 'slot-button-en' )); ?></span>
 				<span slot="setup-button"><?php echo ( $german ? get_option( 'slot-setup-button-de' ) : get_option( 'slot-setup-button-en' )); ?></span>
 				<span slot="chip-error"><?php echo ( $german ? get_option( 'slot-chip-error-de' ) :  get_option( 'slot-chip-error-en' )); ?></span>
