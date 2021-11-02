@@ -340,7 +340,13 @@
           e.key === 'ü' ||
           e.key === 'Ü' ||
           e.key === 'ß' ||
-          e.key === '.'
+          e.key === '.' ||
+          e.key === 'Dead' ||
+          e.which === 211 ||
+          e.shiftKey ||
+          e.key === 'CapsLock' ||
+          e.key === 'Control' ||
+          !/[a-z0-9-]/i.test(e.key)
         ) {
           console.log(e.key + ' illegal character')
           return false
