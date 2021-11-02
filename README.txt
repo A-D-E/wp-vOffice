@@ -49,6 +49,14 @@ https://www.voffice.pro
 == Changelog ==
 
 = 1.0.5 =
+better error handlig
+add hasError marker
+Input: fix max length
+Input: whitespace, german umlaute and more blocked
+Input: enter key blocked if has an error
+fix some css
+
+= 1.0.4 =
 Input: replace "." with "-"
 Input: not allow numbers on first position
 
