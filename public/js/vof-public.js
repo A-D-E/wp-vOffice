@@ -2,13 +2,14 @@
   
   const { __, sprintf } = wp.i18n
   const template = document.createElement('template')
+
   template.innerHTML = `
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
 .vof-checker__form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   font-family: Gudea,Roboto,"Helvetica Neue",Arial,sans-serif;
   width: 100%;
 }
@@ -72,13 +73,14 @@
   letter-spacing: inherit;
   animation-duration: 10ms;
   border-bottom: solid thin rgb(1, 135, 157);
-  margin: 0 1rem;
+  margin: .5rem 0;
   -webkit-tap-highlight-color: transparent;
 }
 
-.vof-checker__buttonswrap {
+.vof-checker__buttongroup {
   flex: 1;
   display: flex;
+  margin:  0 0 1rem 0;
 }
 
 .vof-checker__label {
@@ -145,7 +147,8 @@
   .vof-checker__error {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0.3s, opacity 0.5s, height 0.2s linear;
+    height: 0;
     color: red;
     line-height: 1.1;
     font-size: 90%;
@@ -155,16 +158,24 @@
   .hide{
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    height: 0;
+    transition: visibility 0.3s, opacity 0.5s, height 0.2s linear;
   }
 
   .show {
     visibility: visible;
   opacity: 1;
+  height: 100%;
+  transition: visibility 0.3s, opacity 0.5s, height 0.2s linear;
   }
 
   .vof-checker__chip-error.hide, .vof-checker__chip-success.hide {
     display: none
+  }
+
+  @keyframes awesome-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 </style>
     <div id="vof-checker__root" class="vof-checker__root">
@@ -176,11 +187,12 @@
             <span id="vof-checker__chip-success" class="vof-checker__chip-success hide"><span class="vof-checker__chip-success-icon">&#10004;</span><slot name="chip-success"></slot></span>
             <div id="vof-checker__error" class="vof-checker__error"><slot name="error"></slot></div>
             </div>
-            <div class="vof-checker__buttonswrap">
+            <div class="vof-checker__buttongroup">
             <button id="vof-checker__button" class="vof-checker__button disabled"><slot name="button"></slot> <span class="loader awesome-spin"></span></button>
             <button id="vof-checker__setup-button" class="vof-checker__setup-button disabled"><slot name="setup-button"></slot></button>
             </div>
         </form>
+        
         <div id="vof-checker__feedback" class="vof-checker__feedback"><slot name="feedback"></slot></div>
     </div>
 `
