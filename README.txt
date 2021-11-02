@@ -48,7 +48,7 @@ https://www.voffice.pro
 
 == Changelog ==
 
-= 1.0.4 =
+= 1.0.5 =
 Input: replace "." with "-"
 Input: not allow numbers on first position
 

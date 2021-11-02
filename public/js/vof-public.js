@@ -8,19 +8,17 @@
 
 .vof-checker__form {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   font-family: Gudea,Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin: 1rem 0;
+  width: 100%;
 }
 
 .vof-checker__inputwrap {
     position: relative;
+    flex: 1;
+    margin-right: 2rem;
 }
 
-.vof-checker_buttonswrap {
-  display: flex;
-  margin-top: 1rem;
-}
 .vof-checker__button, .vof-checker__setup-button {
   display: flex;
   align-items: center;
@@ -59,6 +57,7 @@
 }
 .vof-checker__input {
   width: 100%;
+  flex: 1;
   font: inherit;
   color: #000;
   border: 0;
@@ -73,7 +72,17 @@
   letter-spacing: inherit;
   animation-duration: 10ms;
   border-bottom: solid thin rgb(1, 135, 157);
+  margin: 0 1rem;
   -webkit-tap-highlight-color: transparent;
+}
+
+.vof-checker__buttonswrap {
+  flex: 1;
+  display: flex;
+}
+
+.vof-checker__label {
+  flex: 1;
 }
 .vof-checker__input:active, .vof-checker__input:focus {
   border: none;
@@ -99,25 +108,20 @@
   
  .vof-checker__chip-success {
     position: absolute;
-    right: 0;
+    right: -20px;
     top: 0;
     font-size: 0.75rem;
-    padding: 2px 25px 2px 0;
+    padding: 2px 5px 2px 0;
     line-height: 24px;
-    border: solid thin green;
-    border-radius: 20px;
-    color: green;
+    
   }
   .vof-checker__chip-error {
     position: absolute;
-    right: 0;
+    right: -20px;
     top: 0;
     font-size: 0.75rem;
-    padding: 2px 25px 2px 0;
+    padding: 2px 0px 2px 0;
     line-height: 24px;
-    border: solid thin red;
-    border-radius: 20px;
-    color: red;
   }
 
   .vof-checker__chip-success-icon {
@@ -162,16 +166,6 @@
   .vof-checker__chip-error.hide, .vof-checker__chip-success.hide {
     display: none
   }
-
-
-  .vof-checker__feedback {
-    margin-bottom: 1rem;
-  }
-
-  @keyframes awesome-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 </style>
     <div id="vof-checker__root" class="vof-checker__root">
         <form id="vof-checker__form" class="vof-checker__form">
@@ -182,7 +176,7 @@
             <span id="vof-checker__chip-success" class="vof-checker__chip-success hide"><span class="vof-checker__chip-success-icon">&#10004;</span><slot name="chip-success"></slot></span>
             <div id="vof-checker__error" class="vof-checker__error"><slot name="error"></slot></div>
             </div>
-            <div class="vof-checker_buttonswrap">
+            <div class="vof-checker__buttonswrap">
             <button id="vof-checker__button" class="vof-checker__button disabled"><slot name="button"></slot> <span class="loader awesome-spin"></span></button>
             <button id="vof-checker__setup-button" class="vof-checker__setup-button disabled"><slot name="setup-button"></slot></button>
             </div>
@@ -202,41 +196,18 @@
       this.setupBtn = this.shadowRoot.querySelector(
         '#vof-checker__setup-button'
       )
-      this.error = this.shadowRoot.querySelector('#vof-checker__error')
       this.chipError = this.shadowRoot.querySelector('#vof-checker__chip-error')
+      this.error = this.shadowRoot.querySelector('#vof-checker__error')
       this.chipSuccess = this.shadowRoot.querySelector(
         '#vof-checker__chip-success'
       )
-      this.placeholder = this.getAttribute('placeholder')
-      this.input.setAttribute('placeholder', this.placeholder)
-    }
-
-    vormatedValue(val) {
-      return val
-        .replaceAll('ä', 'ae')
-        .replaceAll('ö', 'oe')
-        .replaceAll('ü', 'ue')
-        .replaceAll('ß', 'ss')
-        .replaceAll('.', '-')
-        .replaceAll(/-{2,}/g, '-')
-        .replaceAll(/[^0-9a-zA-Z-]/g, '')
-    }
-
-    checkFirstCharachter(val) {
-      if (/^[0-9]/g.test(val)) {
-        this.hasError = true
-        return true
-      } else {
-        this.hasError = false
-        return false
-      }
     }
 
     async checkDomain(value, hasError) {
       this.loader.style.display = 'inline-flex'
       this.btn.classList.add('disabled')
-      const isRaMicro = this.getAttribute('isRaMicro') === 'ja'
-      const partnerId = this.getAttribute('partnerId') !== ''
+      const isRaMicro = this.getAttribute('isramicro') === 'ja'
+      const partnerId = this.getAttribute('partnerid') !== ''
       hasError = this.hasError
       const headers = new Headers()
       headers.append('Content-Type', 'application/json')
@@ -282,22 +253,47 @@
             return console.error('Error', error)
           }))
     }
+
     connectedCallback() {
       let value // get input-value
+      const placeholder = this.getAttribute('placeholder') // get placeholder value
+      this.input.setAttribute('placeholder', placeholder) // set input placeholder
 
-      this.shadowRoot.querySelector('input').addEventListener('input', (e) => {
-        e.preventDefault()
-        // get input-event
-        this.setupBtn.classList.add('disabled') // disable checking-btn
+      const disableCheckBtn = (hasError) =>
+        hasError
+          ? this.btn.classList.add('disabled')
+          : this.btn.classList.remove('disabled')
 
-        if (this.hasError) {
+      const errorHandler = (hasError) => {
+        if (hasError) {
           // errormessage handler
           this.error.classList.add('show')
           this.error.classList.remove('hide')
+          disableCheckBtn(true)
+          this.hasError = true
         } else {
           this.error.classList.remove('show')
           this.error.classList.add('hide')
+          disableCheckBtn(false)
+          this.hasError = false
         }
+      }
+
+      const vormatedValue = (val) => {
+        return val.replaceAll(/-{2,}/g, '-')
+      }
+
+      this.input.addEventListener('input', (e) => {
+        value = vormatedValue(e.target.value.toLowerCase().trim())
+        e.preventDefault()
+
+        this.setupBtn.classList.add('disabled')
+        this.btn.classList.add('disabled') // disable checking-btn
+
+        if (/^[0-9]/i.test(value)) errorHandler(true)
+        else if (!/^.{3,30}$/i.test(value)) errorHandler(true)
+        else if (!/[0-9a-zA-Z-]/i.test(value)) errorHandler(true)
+        else errorHandler(false)
 
         if (!this.chipError.classList.contains('hide'))
           // error-chip handler
@@ -306,43 +302,39 @@
         if (!this.chipSuccess.classList.contains('hide'))
           // success-chip handler
           this.chipSuccess.classList.add('hide')
-
-        value = e.target.value.toLowerCase() // set input-value to lowercase
-
-        if (this.checkFirstCharachter(this.vormatedValue(value.trim()))) {
-          // check first charachter if not number
-          e.target.value = ''
-          this.btn.classList.add('disabled')
-        } else this.btn.classList.remove('disabled')
-
-        if (
-          // check input length
-          this.vormatedValue(value.trim()).length < 3 ||
-          this.vormatedValue(value.trim()).length > 30
-        ) {
-          this.hasError = true
-          this.btn.classList.add('disabled')
-        } else {
-          this.hasError = false
-          this.btn.classList.remove('disabled')
-        }
       })
 
-      this.shadowRoot.querySelector('input').addEventListener('keyup', (e) => {
+      this.input.addEventListener('keydown', (e) => {
         // block enter key if has error
         if (e.key === 'Enter' && this.hasError) {
-          return (this.hasError = true)
+          errorHandler(true)
         }
       })
 
-      this.shadowRoot.querySelector('button').addEventListener('click', (e) => {
+      this.btn.addEventListener('click', (e) => {
         e.preventDefault()
-        if (!this.hasError && value.length > 3) {
-          this.checkDomain(this.vormatedValue(value.trim()))
+        if (!this.hasError) {
+          this.checkDomain(value)
         }
       })
+
+      this.input.onkeydown = function (e) {
+        if (
+          e.key === ' ' ||
+          e.key === 'ä' ||
+          e.key === 'Ä' ||
+          e.key === 'ö' ||
+          e.key === 'Ö' ||
+          e.key === 'ü' ||
+          e.key === 'Ü' ||
+          e.key === 'ß' ||
+          e.key === '.'
+        ) {
+          console.log(e.key + ' illegal character')
+          return false
+        }
+      }
     }
   }
-
   window.customElements.define('vof-checker', VofChecker)
 })( jQuery )

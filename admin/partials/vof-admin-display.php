@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://voffice.pro
- * @since      1.0.4
+ * @since      1.0.5
  *
  * @package    Vof
  * @subpackage Vof/admin/partials
@@ -30,6 +30,8 @@ do_settings_sections( 'vof' );
       $slot_label_en = get_option( 'slot-label-en' );
       $slot_feedback_de = get_option( 'slot-feedback-de' );
       $slot_feedback_en = get_option( 'slot-feedback-en' );
+      $slot_error_de = get_option( 'slot-error-de' );
+      $slot_error_en = get_option( 'slot-error-en' );
       $slot_button_de = get_option( 'slot-button-de' );
       $slot_button_en = get_option( 'slot-button-en' );
       $slot_setup_button_de = get_option( 'slot-setup-button-de' );
@@ -74,6 +76,18 @@ do_settings_sections( 'vof' );
     </div>
 
     <div class="form-group">
+      <label for="slot-error-de">Error-Message</label>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text" id="slot-error-de">DE</span></div>
+      <div class="col-md-3"><input value="<?php echo $slot_error_de; ?>" type="text" class="form-control mb-2" name="slot-error-de" id="slot-error-de" aria-describedby="slot-error-de" /></div>
+      </div>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text" id="slot-error-en">EN</span></div>
+      <div class="col-md-3"><input value="<?php echo $slot_error_en; ?>" type="text" class="form-control mb-2" name="slot-error-en" id="slot-error-en" aria-describedby="slot-error-en" /></div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="slot-button-de">Button</label>
       <div class="input-group">
       <div class="input-group-prepend"><span class="input-group-text" id="slot-button-de">DE</span></div>
@@ -97,7 +111,7 @@ do_settings_sections( 'vof' );
       </div>
     </div>
 
-    <div class="form-group">
+  <!--   <div class="form-group">
       <label for="slot-chip-error-de">Chip error</label>
       <div class="input-group">
       <div class="input-group-prepend"><span class="input-group-text" id="slot-chip-error-de">DE</span></div>
@@ -119,7 +133,7 @@ do_settings_sections( 'vof' );
       <div class="input-group-prepend"><span class="input-group-text" id="slot-chip-success-en">EN</span></div>
       <div class="col-md-3"><input value="<?php echo $slot_chip_success_en; ?>" type="text" class="form-control mb-2" name="slot-chip-success-en" id="slot-chip-success-en" aria-describedby="slot-chip-success-en" /></div>
       </div>
-    </div>
+    </div> -->
 
     <div class="form-group">
       <label for="slot-chip-success-de">Placeholder</label>
