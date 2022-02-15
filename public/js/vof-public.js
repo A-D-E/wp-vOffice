@@ -1,5 +1,4 @@
-(function( $ ) {
-  
+;(function ($) {
   const { __, sprintf } = wp.i18n
   const template = document.createElement('template')
 
@@ -343,10 +342,10 @@
           e.key === '.' ||
           e.key === 'Dead' ||
           e.which === 211 ||
-          e.shiftKey ||
+          // e.shiftKey ||
           e.key === 'CapsLock' ||
           e.key === 'Control' ||
-          !/[a-z0-9-]/i.test(e.key)
+          !/[a-zA-Z0-9-]/i.test(e.key)
         ) {
           console.log(e.key + ' illegal character')
           return false
@@ -355,4 +354,4 @@
     }
   }
   window.customElements.define('vof-checker', VofChecker)
-})( jQuery )
+})(jQuery)

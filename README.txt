@@ -48,6 +48,10 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 1.0.6 =
+remove check if shift-key pressed
+add Capitalize to input
+
 = 1.0.5 =
 better error handlig
 add hasError marker
