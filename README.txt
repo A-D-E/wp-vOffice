@@ -48,6 +48,9 @@ https://www.voffice.pro
 
 == Changelog ==
 
+= 1.0.7 =
+allow Capitalize
+
 = 1.0.6 =
 remove check if shift-key pressed
 add Capitalize to input
